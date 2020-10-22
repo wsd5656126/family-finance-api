@@ -53,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/test/admin").hasAuthority("ROLE_ADMIN")
                 .antMatchers("/test/user").hasAnyRole("ADMIN", "USER")
                 //不需要认证
-                .antMatchers("/test", "/login", "login").permitAll()
+                .antMatchers("/test", "/login", "login", "/test/post").permitAll()
                 //其他都需要认证
                 .anyRequest().authenticated();
 
