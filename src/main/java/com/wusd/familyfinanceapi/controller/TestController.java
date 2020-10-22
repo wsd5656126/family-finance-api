@@ -25,8 +25,8 @@ public class TestController {
     }
 
     @PostMapping(value = "/post", produces = MediaType.TEXT_PLAIN_VALUE)
-    public String post(@RequestParam("a") String a,
-                       @RequestParam("b") String b) {
+    public String post(@RequestParam(value = "a", required = false) String a,
+                       @RequestParam(value = "b", required = false) String b) {
         log.info("TestController.post...a->{},b->{}", a, b);
         return "post";
     }
